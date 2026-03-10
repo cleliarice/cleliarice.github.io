@@ -7,69 +7,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body { font-family:'Roboto',sans-serif; margin:0; padding:0; background:#FAF6F0; color:#4A5A43; }
-    header { text-align:center; padding:60px 20px; background:#D8EAD3; }
+    header { display:flex; align-items:center; padding:20px; background:#D8EAD3; }
+    header h1 { flex:1; margin:0; font-size:24px; }
     header h1 a { text-decoration:none; color:#4A5A43; }
-    section { padding:40px 20px; max-width:800px; margin:auto; }
-    footer { text-align:center; padding:40px 20px; background:#D8EAD3; color:#4A5A43; margin-top:50px; }
-
-    /* Side Navigation */
-    .side-nav {
-      width: 200px; position: fixed; top:0; left:0; height:100%; background:#D8EAD3; padding-top:60px;
-    }
-    .side-nav ul { list-style:none; padding:0; margin:0; }
-    .side-nav li { position:relative; }
-    .side-nav a { display:block; color:#4A5A43; padding:12px 20px; text-decoration:none; font-weight:bold; }
-    .side-nav a:hover { background:#A6CFA8; color:#fff; }
-    .side-nav .dropdown { display:none; list-style:none; padding-left:0; }
-    .side-nav li:hover .dropdown { display:block; }
-    .side-nav .dropdown li a { padding-left:40px; background:#EFF5EC; }
-
-    .main-content { margin-left:220px; padding:20px; }
+    .hamburger { font-size:30px; cursor:pointer; user-select:none; }
+    .menu { display:none; position:absolute; top:60px; left:0; width:200px; background:#D8EAD3; list-style:none; padding:0; margin:0; border-radius:0 0 8px 0; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); z-index:1000; }
+    .menu li { border-bottom:1px solid #A6CFA8; }
+    .menu li:last-child { border-bottom:none; }
+    .menu li a { display:block; padding:12px 20px; color:#4A5A43; text-decoration:none; font-weight:bold; }
+    .menu li a:hover { background:#A6CFA8; color:#fff; }
+    .main-content { padding:20px; margin-top:20px; }
   </style>
 </head>
 <body>
 
-  <!-- Side Navigation -->
-  <nav class="side-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li>
-        <a href="#">About &#9662;</a>
-        <ul class="dropdown">
-          <li><a href="about.html">About Ruwana</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">Products &#9662;</a>
-        <ul class="dropdown">
-          <li><a href="products.html">View Products</a></li>
-          <li><a href="custom.html">Custom Order</a></li>
-        </ul>
-      </li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <header>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <h1><a href="index.html">Ruwana</a></h1>
+  </header>
 
-  <!-- Main content -->
+  <ul class="menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Ruwana</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="custom.html">Custom Order</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
   <div class="main-content">
-    <header>
-      <h1><a href="index.html">Ruwana</a></h1>
-    </header>
-
-    <section>
-      <h2>Our Mission</h2>
-      <p>Ruwana is a local initiative in Arequipa, Peru. We empower moms by creating opportunities to make handcrafted knitted and crocheted products, turning their talent into sustainable income.</p>
-    </section>
-
-    <section>
-      <h2>The Moms Behind Ruwana</h2>
-      <p>Every product tells a story — the story of a skilled mom who invests love and care into her craft. By supporting Ruwana, you’re supporting them and their families.</p>
-    </section>
-
-    <footer>
-      &copy; 2026 Ruwana. Handmade with ❤️ in Arequipa, Peru.
-    </footer>
+    <h2>About Ruwana</h2>
+    <p>Ruwana is a local initiative based in Arequipa, Peru. We create handmade knitted and crocheted products while supporting mothers in our community. Every purchase empowers local artisans and helps grow our social impact.</p>
   </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
 
 </body>
 </html>
