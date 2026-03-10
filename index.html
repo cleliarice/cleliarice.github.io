@@ -7,103 +7,65 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body { font-family:'Roboto',sans-serif; margin:0; padding:0; background:#FAF6F0; color:#4A5A43; }
-    header { background:#D8EAD3; text-align:center; padding:60px 20px; }
-    header h1 { font-size:2.8rem; margin-bottom:10px; color:#4A5A43; }
-    header p { font-size:1.2rem; color:#6B7B5E; max-width:600px; margin:0 auto; }
-    nav { text-align:center; margin:20px 0; }
-    nav a { margin:0 15px; color:#4A5A43; font-weight:bold; }
-    .section { padding:40px 20px; text-align:center; }
-    .btn { background:#A6CFA8; color:#fff; padding:10px 20px; border-radius:8px; font-weight:bold; display:inline-block; margin:10px; text-decoration:none; }
-    .btn:hover { background:#8FB48E; }
+    header { text-align:center; padding:60px 20px; background:#D8EAD3; }
+    header h1 a { text-decoration:none; color:#4A5A43; }
+    section { padding:40px 20px; max-width:800px; margin:auto; }
     footer { text-align:center; padding:40px 20px; background:#D8EAD3; color:#4A5A43; margin-top:50px; }
+
+    /* Side Navigation */
     .side-nav {
-  width: 200px;
-  position: fixed; /* stays on the side */
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: #D8EAD3; /* pastel green */
-  padding-top: 60px; /* leave space for header */
-}
+      width: 200px; position: fixed; top:0; left:0; height:100%; background:#D8EAD3; padding-top:60px;
+    }
+    .side-nav ul { list-style:none; padding:0; margin:0; }
+    .side-nav li { position:relative; }
+    .side-nav a { display:block; color:#4A5A43; padding:12px 20px; text-decoration:none; font-weight:bold; }
+    .side-nav a:hover { background:#A6CFA8; color:#fff; }
+    .side-nav .dropdown { display:none; list-style:none; padding-left:0; }
+    .side-nav li:hover .dropdown { display:block; }
+    .side-nav .dropdown li a { padding-left:40px; background:#EFF5EC; }
 
-.side-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.side-nav li {
-  position: relative;
-}
-
-.side-nav a {
-  display: block;
-  color: #4A5A43;
-  padding: 12px 20px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.side-nav a:hover {
-  background: #A6CFA8;
-  color: #fff;
-}
-
-.side-nav .dropdown {
-  display: none;
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.side-nav li:hover .dropdown {
-  display: block;
-}
-
-.side-nav .dropdown li a {
-  padding-left: 40px;
-  background: #EFF5EC; /* lighter background for dropdown */
-}
+    .main-content { margin-left:220px; padding:20px; }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1><a href="index.html" style="text-decoration:none; color:#4A5A43;">Ruwana</a></h1>
-    <p>Handcrafted knitted and crocheted products from Arequipa, Peru. Every purchase supports local moms and their families.</p>
-  </header>
-
+  <!-- Side Navigation -->
   <nav class="side-nav">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li>
-      <a href="#">About &#9662;</a>
-      <ul class="dropdown">
-        <li><a href="about.html">About Ruwana</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#">Products &#9662;</a>
-      <ul class="dropdown">
-        <li><a href="products.html">View Products</a></li>
-        <li><a href="custom.html">Custom Order</a></li>
-      </ul>
-    </li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#">About &#9662;</a>
+        <ul class="dropdown">
+          <li><a href="about.html">About Ruwana</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Products &#9662;</a>
+        <ul class="dropdown">
+          <li><a href="products.html">View Products</a></li>
+          <li><a href="custom.html">Custom Order</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-  <div class="section">
-    <h2>Featured Products</h2>
-    <a href="products.html" class="btn">View Products</a>
-    <a href="custom.html" class="btn">Customize Your Own</a>
+  <!-- Main content -->
+  <div class="main-content">
+    <header>
+      <h1><a href="index.html">Ruwana</a></h1>
+      <p style="color:#6B7B5E;">Handmade knitted & crocheted products from Arequipa, Peru. Supporting local moms through every purchase.</p>
+    </header>
+
+    <section>
+      <h2>Welcome to Ruwana!</h2>
+      <p>Explore our cozy, handmade products made with love and care. You can browse our collection or even create your own custom item.</p>
+    </section>
+
+    <footer>
+      &copy; 2026 Ruwana. Handmade with ❤️ in Arequipa, Peru.
+    </footer>
   </div>
-  
-<div class="main-content">
-  <!-- your page content here -->
-</div>
-  <footer>
-    &copy; 2026 Ruwana. Handmade with ❤️ in Arequipa, Peru. Follow us on <a href="https://www.instagram.com/ruwana.aqp/" target="_blank">Instagram</a>.
-  </footer>
 
 </body>
 </html>
