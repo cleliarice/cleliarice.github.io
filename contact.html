@@ -47,4 +47,25 @@
       <input type="email" id="email" required>
       <label for="message">Message:</label>
       <textarea id="message" rows="4" required></textarea>
-      <button type="
+      <button type="submit">Send Message</button>
+      <div class="confirmation" id="confirmationMsg"></div>
+    </form>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+
+    const form = document.getElementById('contactForm');
+    const confirmation = document.getElementById('confirmationMsg');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      confirmation.textContent = "Thank you! Your message has been sent. We'll get back to you soon.";
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
