@@ -16,29 +16,91 @@
     .btn { background:#A6CFA8; color:#fff; padding:10px 20px; border-radius:8px; font-weight:bold; display:inline-block; margin:10px; text-decoration:none; }
     .btn:hover { background:#8FB48E; }
     footer { text-align:center; padding:40px 20px; background:#D8EAD3; color:#4A5A43; margin-top:50px; }
+    .side-nav {
+  width: 200px;
+  position: fixed; /* stays on the side */
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #D8EAD3; /* pastel green */
+  padding-top: 60px; /* leave space for header */
+}
+
+.side-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-nav li {
+  position: relative;
+}
+
+.side-nav a {
+  display: block;
+  color: #4A5A43;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.side-nav a:hover {
+  background: #A6CFA8;
+  color: #fff;
+}
+
+.side-nav .dropdown {
+  display: none;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.side-nav li:hover .dropdown {
+  display: block;
+}
+
+.side-nav .dropdown li a {
+  padding-left: 40px;
+  background: #EFF5EC; /* lighter background for dropdown */
+}
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Ruwana</h1>
+    <h1><a href="index.html" style="text-decoration:none; color:#4A5A43;">Ruwana</a></h1>
     <p>Handcrafted knitted and crocheted products from Arequipa, Peru. Every purchase supports local moms and their families.</p>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="custom.html">Custom Order</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <nav class="side-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li>
+      <a href="#">About &#9662;</a>
+      <ul class="dropdown">
+        <li><a href="about.html">About Ruwana</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Products &#9662;</a>
+      <ul class="dropdown">
+        <li><a href="products.html">View Products</a></li>
+        <li><a href="custom.html">Custom Order</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
   <div class="section">
     <h2>Featured Products</h2>
     <a href="products.html" class="btn">View Products</a>
     <a href="custom.html" class="btn">Customize Your Own</a>
   </div>
-
+  
+<div class="main-content">
+  <!-- your page content here -->
+</div>
   <footer>
     &copy; 2026 Ruwana. Handmade with ❤️ in Arequipa, Peru. Follow us on <a href="https://www.instagram.com/ruwana.aqp/" target="_blank">Instagram</a>.
   </footer>
