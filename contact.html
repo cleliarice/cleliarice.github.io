@@ -7,74 +7,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body { font-family:'Roboto',sans-serif; margin:0; padding:0; background:#FAF6F0; color:#4A5A43; }
-    header { text-align:center; padding:60px 20px; background:#D8EAD3; }
+    header { display:flex; align-items:center; padding:20px; background:#D8EAD3; }
+    header h1 { flex:1; margin:0; font-size:24px; }
     header h1 a { text-decoration:none; color:#4A5A43; }
-    section { padding:40px 20px; max-width:600px; margin:auto; }
-    input, textarea { width:100%; padding:8px; margin:8px 0; border-radius:6px; border:1px solid #ccc; }
+    .hamburger { font-size:30px; cursor:pointer; user-select:none; }
+    .menu { display:none; position:absolute; top:60px; left:0; width:200px; background:#D8EAD3; list-style:none; padding:0; margin:0; border-radius:0 0 8px 0; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); z-index:1000; }
+    .menu li { border-bottom:1px solid #A6CFA8; }
+    .menu li:last-child { border-bottom:none; }
+    .menu li a { display:block; padding:12px 20px; color:#4A5A43; text-decoration:none; font-weight:bold; }
+    .menu li a:hover { background:#A6CFA8; color:#fff; }
+    .main-content { padding:20px; margin-top:20px; }
+    input, textarea { width:100%; padding:8px; margin-bottom:12px; border-radius:6px; border:1px solid #ccc; }
     button { background:#A6CFA8; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer; font-weight:bold; }
     button:hover { background:#8FB48E; }
-    footer { text-align:center; padding:40px 20px; background:#D8EAD3; color:#4A5A43; margin-top:50px; }
-
-    /* Side Navigation */
-    .side-nav {
-      width: 200px; position: fixed; top:0; left:0; height:100%; background:#D8EAD3; padding-top:60px;
-    }
-    .side-nav ul { list-style:none; padding:0; margin:0; }
-    .side-nav li { position:relative; }
-    .side-nav a { display:block; color:#4A5A43; padding:12px 20px; text-decoration:none; font-weight:bold; }
-    .side-nav a:hover { background:#A6CFA8; color:#fff; }
-    .side-nav .dropdown { display:none; list-style:none; padding-left:0; }
-    .side-nav li:hover .dropdown { display:block; }
-    .side-nav .dropdown li a { padding-left:40px; background:#EFF5EC; }
-
-    .main-content { margin-left:220px; padding:20px; }
   </style>
 </head>
 <body>
 
-  <!-- Side Navigation -->
-  <nav class="side-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li>
-        <a href="#">About &#9662;</a>
-        <ul class="dropdown">
-          <li><a href="about.html">About Ruwana</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">Products &#9662;</a>
-        <ul class="dropdown">
-          <li><a href="products.html">View Products</a></li>
-          <li><a href="custom.html">Custom Order</a></li>
-        </ul>
-      </li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <header>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <h1><a href="index.html">Ruwana</a></h1>
+  </header>
+
+  <ul class="menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Ruwana</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="custom.html">Custom Order</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
 
   <div class="main-content">
-    <header>
-      <h1><a href="index.html">Ruwana</a></h1>
-    </header>
-
-    <section>
-      <h2>Contact Us</h2>
-      <form>
-        <label>Name:</label>
-        <input type="text" placeholder="Your name" required>
-        <label>Email:</label>
-        <input type="email" placeholder="Your email" required>
-        <label>Message:</label>
-        <textarea rows="4" placeholder="Your message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </section>
-
-    <footer>
-      &copy; 2026 Ruwana. Handmade with ❤️ in Arequipa, Peru.
-    </footer>
-  </div>
-
-</body>
-</html>
+    <h2>Contact Us</h2>
+    <p>If you have any questions or want to collaborate, feel free to send us a message:</p>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <label for="message">Message:</label>
+      <textarea id="message" rows="4" required></textarea>
+      <button type="
